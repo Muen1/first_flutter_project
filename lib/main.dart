@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,19 +11,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'First Flutter Project',
+      theme: ThemeData( // Added a theme for consistent styling
+        primarySwatch: Colors.pink,
+      ),
       home: Scaffold(
         backgroundColor: Colors.pink[50],
         appBar: AppBar(
-          title: Text('First Flutter Project'),
+          title: const Text('First Flutter Project'), // Added const
           backgroundColor: Colors.pink,
         ),
-        body: Center(
-          child: Text(
-            'Hello World, I am Cynthia Mutie', 
+        body: const Center( // Added const
+          child: Text( // Added const
+            'Hello World, I am Cynthia Mutie',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 26,
-              color: Colors.pink[800],
+              color: Colors.pink, // Changed to primary color for consistency
               fontWeight: FontWeight.bold,
             ),
           ),
