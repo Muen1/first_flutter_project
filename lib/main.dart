@@ -11,25 +11,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'First Flutter Project',
-      theme: ThemeData( // Added a theme for consistent styling
-        primarySwatch: Colors.pink,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        backgroundColor: Colors.pink[50],
-        appBar: AppBar(
-          title: const Text('First Flutter Project'), // Added const
-          backgroundColor: Colors.pink,
-        ),
-        body: const Center( // Added const
-          child: Text( // Added const
-            'Hello World, I am Cynthia Mutie',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 26,
-              color: Colors.pink, // Changed to primary color for consistency
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("First Flutter Project"),
+      ),
+      body: Center(
+        child: Text(
+          "Hello World, I am Cynthia Mutie",
+          style: TextStyle(fontSize: 24, color: Colors.pink),
         ),
       ),
     );
